@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bw74wibkmxm6l"]
+
+[ext_resource type="Script" uid="uid://cib4p8vpmap2r" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cqasv3lh4vud" path="res://Scenes/world.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://fd427tqgypn8" path="res://Scenes/gui.tscn" id="3_jjvhh"]
+
+[node name="Main" type="Node2D" unique_id=7791111]
+script = ExtResource("1_jjgbg")
+metadata/_edit_horizontal_guides_ = [78221.0]
+
+[node name="World" parent="." unique_id=1534856568 instance=ExtResource("2_8gbba")]
+
+[node name="Gui" parent="World" unique_id=220181687 instance=ExtResource("3_jjvhh")]
+metadata/_edit_use_anchors_ = true

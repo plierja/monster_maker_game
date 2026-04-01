@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dg4q1sg2jp8qc"]
+
+[ext_resource type="Script" uid="uid://ccmpufh5710cp" path="res://Scripts/monster.gd" id="1_xhoai"]
+
+[node name="Monster" type="Node2D" unique_id=462879854]
+visible = false
+script = ExtResource("1_xhoai")

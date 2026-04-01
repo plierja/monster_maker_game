@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bw74wibkmxm6l"]
+
+[ext_resource type="Script" uid="uid://cib4p8vpmap2r" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://0m60nvn8c2nr" path="res://Scenes/main_menu.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://d01ptsk7mhru7" path="res://Scripts/shop.tscn" id="3_8gbba"]
+
+[node name="Main" type="Node2D" unique_id=7791111 node_paths=PackedStringArray("Shop", "MainMenu")]
+script = ExtResource("1_jjgbg")
+Shop = NodePath("Shop")
+MainMenu = NodePath("MainMenu")
+metadata/_edit_horizontal_guides_ = [78221.0]
+
+[node name="MainMenu" parent="." unique_id=2093489235 instance=ExtResource("2_bo1nx")]
+
+[node name="Shop" parent="." unique_id=905549963 instance=ExtResource("3_8gbba")]

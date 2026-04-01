@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bw74wibkmxm6l"]
+
+[ext_resource type="Script" uid="uid://cib4p8vpmap2r" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cqasv3lh4vud" path="res://Scenes/world.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://c00jmcbbe4dqt" path="res://Scripts/clickable_house.tscn" id="4_kry3j"]
+[ext_resource type="PackedScene" uid="uid://d01ptsk7mhru7" path="res://Scripts/shop.tscn" id="5_21xkr"]
+
+[node name="Main" type="Node2D" unique_id=7791111]
+script = ExtResource("1_jjgbg")
+metadata/_edit_horizontal_guides_ = [78221.0]
+
+[node name="World" parent="." unique_id=1534856568 instance=ExtResource("2_8gbba")]
+metadata/_edit_lock_ = true
+
+[node name="EntryScene" type="Node2D" parent="World" unique_id=1435748118]
+
+[node name="GoToShop" parent="World/EntryScene" unique_id=1250650934 instance=ExtResource("4_kry3j")]
+position = Vector2(340, 133)
+
+[node name="Shop" parent="World" unique_id=905549963 instance=ExtResource("5_21xkr")]
+visible = false
+position = Vector2(-162, -89)

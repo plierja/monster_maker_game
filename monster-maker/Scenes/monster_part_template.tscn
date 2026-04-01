@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://v0l174uasiw4"]
+
+[ext_resource type="Script" uid="uid://b0hfbdyeql2sm" path="res://Scripts/monster_part_template.gd" id="1_77e1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xpau"]
+size = Vector2(119, 118)
+
+[node name="MonsterPartTemplate" type="Area2D" unique_id=902214235]
+script = ExtResource("1_77e1y")
+
+[node name="MonsterPartImage" type="Node2D" parent="." unique_id=39824732]
+
+[node name="MonsterPartImage" type="Sprite2D" parent="MonsterPartImage" unique_id=1225787580]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=179441180]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_2xpau")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

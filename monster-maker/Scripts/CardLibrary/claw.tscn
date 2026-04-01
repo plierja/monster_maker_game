@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://i1p0v54xhua8"]
+
+[ext_resource type="Script" uid="uid://gkow8ei60qjx" path="res://Scripts/claw.gd" id="1_4odyo"]
+[ext_resource type="PackedScene" uid="uid://v0l174uasiw4" path="res://Scenes/monster_part_template.tscn" id="1_17st4"]
+
+[node name="Claw" type="Node2D" unique_id=1138373066]
+script = ExtResource("1_4odyo")
+
+[node name="MonsterPartTemplate" parent="." unique_id=902214235 instance=ExtResource("1_17st4")]
+socket_placement = "Hand"
+card_name = "Claw"

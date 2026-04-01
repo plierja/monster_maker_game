@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://0m60nvn8c2nr"]
+
+[ext_resource type="Script" uid="uid://dipyvkjv0747w" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="PackedScene" uid="uid://cqasv3lh4vud" path="res://Scenes/world.tscn" id="1_48xlc"]
+[ext_resource type="PackedScene" uid="uid://c00jmcbbe4dqt" path="res://Scripts/clickable_house.tscn" id="2_1ehe0"]
+
+[node name="MainMenu" type="Node2D" unique_id=2093489235 node_paths=PackedStringArray("go_to_shop_button")]
+script = ExtResource("1_1ehe0")
+go_to_shop_button = NodePath("ClickableHouse")
+
+[node name="World" parent="." unique_id=2031342449 instance=ExtResource("1_48xlc")]
+
+[node name="ClickableHouse" parent="." unique_id=1411733890 instance=ExtResource("2_1ehe0")]
+position = Vector2(439, 79)
+
+[connection signal="go_to_shop" from="ClickableHouse" to="." method="_on_clickable_house_go_to_shop"]

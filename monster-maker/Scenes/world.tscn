@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cqasv3lh4vud"]
+
+[ext_resource type="Texture2D" uid="uid://cjl27u1p7fg3k" path="res://Art Assets/BG Art/BasicWindow.png" id="1_a02cp"]
+
+[node name="World" type="Node2D" unique_id=2031342449]
+metadata/_edit_horizontal_guides_ = [360.0]
+metadata/_edit_vertical_guides_ = [544.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1898431288]
+position = Vector2(272.5, 179.5)
+scale = Vector2(1.696875, 1.9833332)
+texture = ExtResource("1_a02cp")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1693029390]
+position = Vector2(272.5, 179.5)
+scale = Vector2(1.696875, 1.9833332)
