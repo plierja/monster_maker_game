@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cddrluf58tyey"]
 
 [ext_resource type="Script" uid="uid://fpt1pvu736om" path="res://Scenes/player_inventory.gd" id="1_nwplk"]
-[ext_resource type="Script" uid="uid://bcwf77pqj6cbf" path="res://Scenes/flow_container.gd" id="2_8khf3"]
+[ext_resource type="PackedScene" uid="uid://cqasv3lh4vud" path="res://Scenes/world.tscn" id="2_8khf3"]
 
 [node name="PlayerInventory" type="Control" unique_id=32605899]
 layout_mode = 3
@@ -9,25 +9,14 @@ anchors_preset = 0
 mouse_filter = 2
 script = ExtResource("1_nwplk")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1287595788]
-layout_mode = 0
-offset_right = 365.0
-offset_bottom = 297.0
-color = Color(0.38039216, 1, 1, 1)
+[node name="World" parent="." unique_id=2031342449 instance=ExtResource("2_8khf3")]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1592744046]
+[node name="InventoryScrollContainer" type="ScrollContainer" parent="." unique_id=963408494]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 362.0
-offset_bottom = 296.0
-horizontal_scroll_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="FlowContainer" type="FlowContainer" parent="ScrollContainer" unique_id=1879467874]
+[node name="InventoryGrid" type="GridContainer" parent="InventoryScrollContainer" unique_id=1377746286]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("2_8khf3")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="ready" from="ScrollContainer/FlowContainer" to="ScrollContainer/FlowContainer" method="_on_ready"]

@@ -11,8 +11,6 @@ var offset = Vector2(0,0)
 var starting_position: Vector2 
 @export var in_inventory: bool = false
 
-signal on_add_to_inventory
-
 
 
  
@@ -20,7 +18,6 @@ signal on_add_to_inventory
 func _ready(): 
 	#match_shape_to_sprite()
 	starting_position = global_position
-	$"."/CardCost.text = str(card_cost)
 	pass # Replace with function body.
 
 func set_image(image): 
@@ -31,6 +28,7 @@ func set_image(image):
 func _process(_delta: float) -> void:
 	if is_dragging:
 		global_position  = get_global_mouse_position() + offset
+	$"."/CardCost.text = str(card_cost)
 	pass
 	
 func add_to_inventory(): 
@@ -40,9 +38,10 @@ func add_to_inventory():
 	var card = card_add_to_inventory.instantiate()
 	Globals.player_inventory.append(card)
 	queue_free()
+	
+
 	pass # Replace with function body.
 
-	#on_add_to_inventory.emit()
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

@@ -14,5 +14,3 @@ script = ExtResource("1_77b6v")
 [node name="MonsterPartTemplate" parent="." unique_id=902214235 instance=ExtResource("1_146vg")]
 
 [node name="Timer" type="Timer" parent="." unique_id=403974908]
-
-[connection signal="on_add_to_inventory" from="MonsterPartTemplate" to="." method="_on_monster_part_template_on_add_to_inventory"]

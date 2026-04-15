@@ -5,8 +5,6 @@ var image_texture:= load(image_texture_path)
 func _ready() -> void:
 	$MonsterPartTemplate.set_image(image_texture)
 	$MonsterPartTemplate.card_name = "mushroom_head"
-
-
 	pass # Replace with function body.
 
 
@@ -18,11 +16,3 @@ func _process(_delta: float) -> void:
 
 func _heal_monster():
 	pass
-
-
-func _on_monster_part_template_on_add_to_inventory() -> void:
-	var card_add_to_inventory = load("res://Scripts/CardLibrary/mushroom_head.tscn")
-	var card = card_add_to_inventory.instantiate()
-	Globals.player_inventory.append(card)
-	queue_free()
-	pass # Replace with function body.

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dipyvkjv0747w" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="PackedScene" uid="uid://cqasv3lh4vud" path="res://Scenes/world.tscn" id="1_48xlc"]
 [ext_resource type="PackedScene" uid="uid://c00jmcbbe4dqt" path="res://Scripts/clickable_house.tscn" id="2_1ehe0"]
+[ext_resource type="PackedScene" uid="uid://duuks5o4sowm5" path="res://go_to_inventory_button.tscn" id="4_ce3w2"]
 
 [node name="MainMenu" type="Node2D" unique_id=2093489235 node_paths=PackedStringArray("go_to_shop_button")]
 script = ExtResource("1_1ehe0")
@@ -20,10 +21,8 @@ offset_right = -6.0
 offset_bottom = -80.0
 text = "Show monster"
 
-[node name="GoToInventory" type="Button" parent="." unique_id=1630876199]
-top_level = true
-offset_left = 83.0
+[node name="GoToInventoryButton" parent="." unique_id=1660051389 instance=ExtResource("4_ce3w2")]
+offset_left = 57.0
 offset_top = -113.0
-offset_right = 244.0
+offset_right = 218.0
 offset_bottom = -79.0
-text = "Inventory"
