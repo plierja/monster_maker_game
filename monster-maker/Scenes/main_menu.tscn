@@ -11,6 +11,19 @@ go_to_shop_button = NodePath("ClickableHouse")
 [node name="World" parent="." unique_id=2031342449 instance=ExtResource("1_48xlc")]
 
 [node name="ClickableHouse" parent="." unique_id=1411733890 instance=ExtResource("2_1ehe0")]
-position = Vector2(439, 79)
+position = Vector2(191, -13)
 
-[connection signal="go_to_shop" from="ClickableHouse" to="." method="_on_clickable_house_go_to_shop"]
+[node name="GoToMonster" type="Button" parent="." unique_id=2133801215]
+offset_left = -202.0
+offset_top = -114.0
+offset_right = -6.0
+offset_bottom = -80.0
+text = "Show monster"
+
+[node name="GoToInventory" type="Button" parent="." unique_id=1630876199]
+top_level = true
+offset_left = 83.0
+offset_top = -113.0
+offset_right = 244.0
+offset_bottom = -79.0
+text = "Inventory"

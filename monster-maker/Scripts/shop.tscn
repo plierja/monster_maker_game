@@ -4,53 +4,59 @@
 [ext_resource type="Script" uid="uid://du8r375sva1vs" path="res://Scripts/shop.gd" id="1_juj0j"]
 [ext_resource type="Script" uid="uid://44lo6nbkupxg" path="res://Scripts/button.gd" id="2_1t7yo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juj0j"]
+size = Vector2(73, 40)
+
 [node name="Shop" type="Node2D" unique_id=905549963 node_paths=PackedStringArray("leave_shop_button")]
 script = ExtResource("1_juj0j")
 leave_shop_button = NodePath("Button")
 
 [node name="World" parent="." unique_id=2031342449 instance=ExtResource("1_1t7yo")]
 z_index = -1
+metadata/_edit_lock_ = true
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1182769566]
-offset_left = 276.0
-offset_top = 49.0
-offset_right = 316.0
-offset_bottom = 89.0
+[node name="AddToInventoryDropPoint" type="Area2D" parent="." unique_id=1158844235 groups=["droppable"]]
+position = Vector2(205, -102)
+collision_layer = 2
 
-[node name="Label" type="Label" parent="." unique_id=933726566]
-offset_left = 276.0
-offset_top = 55.0
-offset_right = 316.0
-offset_bottom = 78.0
+[node name="Polygon2D" type="Polygon2D" parent="AddToInventoryDropPoint" unique_id=1277957461]
+position = Vector2(35.5, 20)
+polygon = PackedVector2Array(-36.5, 20, -36.5, -20, 36.5, -20, 36.5, 20)
+
+[node name="AddToInventoryCollision" type="CollisionShape2D" parent="AddToInventoryDropPoint" unique_id=566537706]
+position = Vector2(35.5, 20)
+shape = SubResource("RectangleShape2D_juj0j")
+
+[node name="Label" type="Label" parent="AddToInventoryDropPoint" unique_id=933726566]
+offset_top = 6.0
+offset_right = 40.0
+offset_bottom = 29.0
 theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 text = "Shop"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=322505253]
-offset_left = 421.0
-offset_top = 309.0
-offset_right = 516.0
-offset_bottom = 340.0
+offset_left = 90.0
+offset_top = 80.0
+offset_right = 253.0
+offset_bottom = 114.0
 text = "Leave shop"
 script = ExtResource("2_1t7yo")
 
 [node name="ShopSlots" type="Node2D" parent="." unique_id=1521286943]
 
 [node name="Marker2D" type="Marker2D" parent="ShopSlots" unique_id=252723023]
-position = Vector2(66, 127)
+position = Vector2(-228, -69)
 
 [node name="Marker2D2" type="Marker2D" parent="ShopSlots" unique_id=2142409966]
-position = Vector2(187, 125)
+position = Vector2(-53, -67)
 
 [node name="Marker2D3" type="Marker2D" parent="ShopSlots" unique_id=365508110]
-position = Vector2(65, 192)
+position = Vector2(-229, 96)
 
 [node name="Marker2D4" type="Marker2D" parent="ShopSlots" unique_id=782374765]
-position = Vector2(188, 192)
+position = Vector2(-53, 95)
 
-[node name="Marker2D5" type="Marker2D" parent="ShopSlots" unique_id=2118481315]
-position = Vector2(68, 270)
-
-[node name="Marker2D6" type="Marker2D" parent="ShopSlots" unique_id=689262841]
-position = Vector2(191, 269)
-
+[connection signal="area_entered" from="AddToInventoryDropPoint" to="." method="_on_add_to_inventory_drop_point_area_entered"]
+[connection signal="body_shape_entered" from="AddToInventoryDropPoint" to="." method="_on_add_to_inventory_drop_point_body_shape_entered"]
 [connection signal="button_up" from="Button" to="Button" method="_on_button_up"]

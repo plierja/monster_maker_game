@@ -1,4 +1,4 @@
-extends Node2D
+class_name Shop extends Node2D
 @export var leave_shop_button: Button
 var card_archive: Array[PackedScene] = []
 
@@ -30,7 +30,7 @@ func randomize_cards():
 	while i < Globals.shop_slot_count:
 		new_shop_item = card_archive.pick_random()
 		var new_node = new_shop_item.instantiate()
-		new_node.global_position = $ShopSlots.get_child(i).global_position
+		new_node.position = $ShopSlots.get_child(i).position
 		add_child(new_node)
 		i += 1 
 		
@@ -42,7 +42,6 @@ func update_global_shop():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Globals.shop_items.is_empty:
-		print("shop is empty")
 		randomize_cards()
 		update_global_shop()
 	else:
@@ -52,5 +51,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

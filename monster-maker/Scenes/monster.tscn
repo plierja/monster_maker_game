@@ -1,7 +1,72 @@
 [gd_scene format=3 uid="uid://dg4q1sg2jp8qc"]
 
 [ext_resource type="Script" uid="uid://ccmpufh5710cp" path="res://Scripts/monster.gd" id="1_xhoai"]
+[ext_resource type="PackedScene" uid="uid://cddrluf58tyey" path="res://Scenes/player_inventory.tscn" id="2_i44lo"]
 
-[node name="Monster" type="Node2D" unique_id=462879854]
-visible = false
+[node name="Monster" type="Control" unique_id=2140851536]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_xhoai")
+
+[node name="background_image" type="ColorRect" parent="." unique_id=1065224965]
+layout_mode = 0
+offset_top = 44.0
+offset_right = 257.0
+offset_bottom = 343.0
+color = Color(0.3363497, 0.22401893, 0.31327242, 1)
+
+[node name="head_slot" type="Panel" parent="." unique_id=431316164]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 51.0
+offset_right = 138.0
+offset_bottom = 91.0
+
+[node name="left_hand_slot" type="Panel" parent="." unique_id=400150553]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 150.0
+offset_right = 64.0
+offset_bottom = 190.0
+
+[node name="right_hand_slot" type="Panel" parent="." unique_id=63179553]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 153.0
+offset_right = 226.0
+offset_bottom = 193.0
+
+[node name="left_foot_slot" type="Panel" parent="." unique_id=664821546]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 276.0
+offset_right = 102.0
+offset_bottom = 316.0
+
+[node name="right_foot_slot" type="Panel" parent="." unique_id=1502837199]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 276.0
+offset_right = 201.0
+offset_bottom = 316.0
+
+[node name="tail_slot" type="Panel" parent="." unique_id=1057354135]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 216.0
+offset_right = 53.0
+offset_bottom = 256.0
+
+[node name="body_slot" type="Panel" parent="." unique_id=1660749878]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 114.0
+offset_right = 137.0
+offset_bottom = 154.0
+
+[node name="PlayerInventory" parent="." unique_id=32605899 instance=ExtResource("2_i44lo")]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 44.0
+offset_right = 261.0
+offset_bottom = 44.0

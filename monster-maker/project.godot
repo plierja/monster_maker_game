@@ -17,15 +17,22 @@ config/icon="res://Art Assets/icon.svg"
 
 [autoload]
 
-GlobalButton="*uid://44lo6nbkupxg"
 Globals="*uid://nnur8rymcw43"
 
 [display]
 
-window/size/viewport_width=544
-window/size/viewport_height=361
-window/stretch/mode="viewport"
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+droppable=""
+
+[gui]
+
+theme/custom_font="uid://c0xaifgxc777v"
 
 [input]
 
@@ -34,6 +41,11 @@ window/stretch/aspect="expand"
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="card_layer"
+2d_physics/layer_2="drop_layer"
 
 [physics]
 

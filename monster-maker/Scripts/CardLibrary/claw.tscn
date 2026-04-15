@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://i1p0v54xhua8"]
 
-[ext_resource type="Script" uid="uid://gkow8ei60qjx" path="res://Scripts/claw.gd" id="1_4odyo"]
+[ext_resource type="Script" uid="uid://gkow8ei60qjx" path="res://Scripts/CardLibrary/claw.gd" id="1_4odyo"]
 [ext_resource type="PackedScene" uid="uid://v0l174uasiw4" path="res://Scenes/monster_part_template.tscn" id="1_17st4"]
 
-[node name="Claw" type="Node2D" unique_id=1138373066]
+[node name="Claw" type="Control" unique_id=918928230 groups=["droppable"]]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
 script = ExtResource("1_4odyo")
 
 [node name="MonsterPartTemplate" parent="." unique_id=902214235 instance=ExtResource("1_17st4")]
 socket_placement = "Hand"
 card_name = "Claw"
+
+[connection signal="on_add_to_inventory" from="MonsterPartTemplate" to="." method="_on_monster_part_template_on_add_to_inventory"]

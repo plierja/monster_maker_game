@@ -1,19 +1,30 @@
 [gd_scene format=3 uid="uid://v0l174uasiw4"]
 
 [ext_resource type="Script" uid="uid://b0hfbdyeql2sm" path="res://Scripts/monster_part_template.gd" id="1_77e1y"]
+[ext_resource type="Texture2D" uid="uid://cnnnhvtliy7k0" path="res://Art Assets/Card Art/Claw-Card-01.png" id="2_4skbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xpau"]
-size = Vector2(119, 118)
+size = Vector2(92.5, 126)
 
-[node name="MonsterPartTemplate" type="Area2D" unique_id=902214235]
+[node name="MonsterPartTemplate" type="Area2D" unique_id=902214235 groups=["droppable"]]
+collision_mask = 2
 script = ExtResource("1_77e1y")
 
-[node name="MonsterPartImage" type="Node2D" parent="." unique_id=39824732]
+[node name="MonsterPartImage" type="Sprite2D" parent="." unique_id=1225787580]
+texture = ExtResource("2_4skbq")
 
-[node name="MonsterPartImage" type="Sprite2D" parent="MonsterPartImage" unique_id=1225787580]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=179441180]
-position = Vector2(0.5, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=179441180 groups=["droppable"]]
+position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_2xpau")
 
+[node name="CardCost" type="Label" parent="." unique_id=2094344811]
+offset_left = 26.0
+offset_top = -64.0
+offset_right = 46.0
+offset_bottom = -41.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
