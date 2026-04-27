@@ -1,7 +1,31 @@
 [gd_scene format=3 uid="uid://bw74wibkmxm6l"]
 
 [ext_resource type="Script" uid="uid://cib4p8vpmap2r" path="res://Scripts/main.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://cqasv3lh4vud" path="res://Scenes/world.tscn" id="2_bo1nx"]
+[ext_resource type="Script" uid="uid://bt536206x2pqo" path="res://Scripts/States/state_machine.gd" id="3_8gbba"]
+[ext_resource type="Script" uid="uid://bvypwg45susa7" path="res://Scripts/States/Screen_states/main_state.gd" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://bnf45wsg7bb2h" path="res://Scripts/States/Screen_states/shop_state.gd" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://cvrwob6a55npy" path="res://Scripts/States/Screen_states/inventory_state.gd" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://cfk3uwdia3iwr" path="res://Scripts/States/Screen_states/dungeon_state.gd" id="7_6bp64"]
 
 [node name="Main" type="Node2D" unique_id=7791111]
 script = ExtResource("1_jjgbg")
 metadata/_edit_horizontal_guides_ = [78221.0]
+
+[node name="World" parent="." unique_id=2031342449 instance=ExtResource("2_bo1nx")]
+
+[node name="StateMachine" type="Node" parent="." unique_id=246489379]
+script = ExtResource("3_8gbba")
+metadata/_custom_type_script = "uid://bt536206x2pqo"
+
+[node name="Main" type="Node" parent="StateMachine" unique_id=1340532386]
+script = ExtResource("4_jjvhh")
+
+[node name="Shop" type="Node" parent="StateMachine" unique_id=1310034928]
+script = ExtResource("5_kry3j")
+
+[node name="Inventory" type="Node" parent="StateMachine" unique_id=257065143]
+script = ExtResource("6_21xkr")
+
+[node name="Dungeon" type="Node" parent="StateMachine" unique_id=54143328]
+script = ExtResource("7_6bp64")

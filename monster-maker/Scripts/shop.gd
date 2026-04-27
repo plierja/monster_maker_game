@@ -2,6 +2,7 @@ class_name Shop extends Node2D
 @export var leave_shop_button: Button
 var card_archive: Array[PackedScene] = []
 
+signal leave_shop
 
 
 func load_all_cards():
@@ -30,8 +31,8 @@ func randomize_cards():
 	while i < Globals.shop_slot_count:
 		new_shop_item = card_archive.pick_random()
 		var new_node = new_shop_item.instantiate()
-		new_node.position = $ShopSlots.get_child(i).position
-		add_child(new_node)
+		#new_node.position = $ShopSlots.get_child(i).position
+		$ShopSlots.add_child(new_node)
 		i += 1 
 		
 		
@@ -49,7 +50,11 @@ func _ready() -> void:
 		return
 	pass
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+
+func _on_leave_shop_button_button_up() -> void:
+	leave_shop.emit()
+	pass # Replace with function body.

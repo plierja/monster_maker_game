@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cbpu26pawphw0"]
+
+[ext_resource type="Texture2D" uid="uid://bhfwqbohrwhi0" path="res://Art Assets/Card Art/BG-ART-MonsterInventory-01.png" id="1_2wvtd"]
+[ext_resource type="Texture2D" uid="uid://bxehfx6ca443u" path="res://Art Assets/Card Art/Monster-Part-Equipment-Slot-01.png" id="2_eoxmk"]
+[ext_resource type="Script" uid="uid://bqr47ujyqwtep" path="res://Scenes/equipment_slot.gd" id="3_2nng8"]
+
+[node name="MonsterEquippedMenu" type="Control" unique_id=958280206]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="TextureRect" parent="." unique_id=951103068]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 285.0
+offset_bottom = 310.0
+texture = ExtResource("1_2wvtd")
+
+[node name="HeadSlot" type="TextureRect" parent="." unique_id=1610523650]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 32.0
+offset_right = 166.0
+offset_bottom = 101.0
+texture = ExtResource("2_eoxmk")
+expand_mode = 4
+
+[node name="ArmSlot" type="TextureRect" parent="." unique_id=1388208357]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 32.0
+offset_right = 166.0
+offset_bottom = 101.0
+texture = ExtResource("2_eoxmk")
+expand_mode = 4
+
+[node name="ArmSlot2" type="TextureRect" parent="." unique_id=121604070]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 32.0
+offset_right = 166.0
+offset_bottom = 101.0
+texture = ExtResource("2_eoxmk")
+expand_mode = 4
+
+[node name="Torso" type="TextureRect" parent="." unique_id=1939258238]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 32.0
+offset_right = 166.0
+offset_bottom = 101.0
+texture = ExtResource("2_eoxmk")
+expand_mode = 4
+
+[node name="LegSlot" type="TextureRect" parent="." unique_id=1175885513]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 215.0
+offset_right = 230.0
+offset_bottom = 284.0
+texture = ExtResource("2_eoxmk")
+expand_mode = 4
+script = ExtResource("3_2nng8")

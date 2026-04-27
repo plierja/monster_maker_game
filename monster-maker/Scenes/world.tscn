@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqasv3lh4vud"]
 
-[ext_resource type="Texture2D" uid="uid://ctg017qg6rhm2" path="res://Art Assets/Card Art/BgArt-Cobblestone01.png" id="1_a02cp"]
+[ext_resource type="Texture2D" uid="uid://ctg017qg6rhm2" path="res://Art Assets/BG Art/BgArt-Cobblestone01.png" id="1_a02cp"]
 
 [node name="World" type="Node2D" unique_id=2031342449]
 metadata/_edit_horizontal_guides_ = [360.0]

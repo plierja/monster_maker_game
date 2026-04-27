@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cq4q2i0fw0fyd"]
+
+[ext_resource type="Script" uid="uid://ds76hun13ylt2" path="res://dungeon_room.gd" id="1_681ux"]
+
+[node name="DungeonRoom" type="Control" unique_id=1569927553]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_681ux")

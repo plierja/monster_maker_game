@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://duuks5o4sowm5"]
 
-[ext_resource type="Script" uid="uid://bm13ahfpck2o6" path="res://go_to_inventory.gd" id="1_xfdr6"]
+[ext_resource type="Script" uid="uid://bm13ahfpck2o6" path="res://Scripts/go_to_inventory.gd" id="1_xfdr6"]
 
 [node name="GoToInventoryButton" type="Button" unique_id=1660051389]
 anchors_preset = 15

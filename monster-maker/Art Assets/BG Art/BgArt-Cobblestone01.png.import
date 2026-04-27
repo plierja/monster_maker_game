@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0is02rbglcyx"
-path="res://.godot/imported/BgArt-Cobblestone01.png-b4181a66ceea13653fb330072fda15c4.ctex"
+uid="uid://ctg017qg6rhm2"
+path="res://.godot/imported/BgArt-Cobblestone01.png-7c050662024d748abb7a33b8643c13a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Card Art/BgArt-Cobblestone01.png"
-dest_files=["res://.godot/imported/BgArt-Cobblestone01.png-b4181a66ceea13653fb330072fda15c4.ctex"]
+source_file="res://Art Assets/BG Art/BgArt-Cobblestone01.png"
+dest_files=["res://.godot/imported/BgArt-Cobblestone01.png-7c050662024d748abb7a33b8643c13a3.ctex"]
 
 [params]
 

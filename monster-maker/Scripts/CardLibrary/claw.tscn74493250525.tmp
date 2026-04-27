@@ -1,7 +1,33 @@
 [gd_scene format=3 uid="uid://i1p0v54xhua8"]
 
 [ext_resource type="Texture2D" uid="uid://cnnnhvtliy7k0" path="res://Art Assets/Card Art/Claw-Card-01.png" id="1_i8v6c"]
-[ext_resource type="Script" uid="uid://gkow8ei60qjx" path="res://Scripts/CardLibrary/claw.gd" id="1_sqrdu"]
+
+[sub_resource type="GDScript" id="GDScript_i8v6c"]
+script/source = "extends MonsterPart
+
+var image_texture_path := \"res://Art Assets/Card Art/Claw-Card-01.png\"
+var image_texture:= load(image_texture_path)
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	card_cost = 1
+	socket_placements = [\"torso\",\"leg\",\"arm\"]
+	card_name = \"claw\"
+	$Label.text = str(card_cost)
+	
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+	
+func _get_drag_data(at_position: Vector2) -> Variant:
+	var data = self
+	var prev = TextureRect.new()
+	prev.texture = $TextureRect.texture
+	prev.self_modulate.a = 0.5
+	set_drag_preview(prev)
+	return data
+"
 
 [node name="Claw" type="PanelContainer" unique_id=1916624729 groups=["droppable"]]
 custom_minimum_size = Vector2(120, 144)
@@ -15,7 +41,7 @@ grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 mouse_filter = 2
-script = ExtResource("1_sqrdu")
+script = SubResource("GDScript_i8v6c")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1537101999]
 layout_mode = 2

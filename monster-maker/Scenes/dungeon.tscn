@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://hfbbjdei7wff"]
+
+[ext_resource type="Texture2D" uid="uid://cmi18oe5pgnre" path="res://Art Assets/Card Art/Hallway-BG-01.png" id="1_oavya"]
+
+[node name="Dungeon" type="Control" unique_id=1420938611]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2064250869]
+texture = ExtResource("1_oavya")
+
+[node name="Camera2D" type="Camera2D" parent="Background" unique_id=79419766]

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dg4q1sg2jp8qc"]
 
 [ext_resource type="Script" uid="uid://ccmpufh5710cp" path="res://Scripts/monster.gd" id="1_xhoai"]
-[ext_resource type="PackedScene" uid="uid://cddrluf58tyey" path="res://Scenes/player_inventory.tscn" id="2_i44lo"]
 
 [node name="Monster" type="Control" unique_id=2140851536]
 layout_mode = 3
@@ -63,10 +62,3 @@ offset_left = 97.0
 offset_top = 114.0
 offset_right = 137.0
 offset_bottom = 154.0
-
-[node name="PlayerInventory" parent="." unique_id=32605899 instance=ExtResource("2_i44lo")]
-layout_mode = 0
-offset_left = 261.0
-offset_top = 44.0
-offset_right = 261.0
-offset_bottom = 44.0
