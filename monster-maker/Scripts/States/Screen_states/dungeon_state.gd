@@ -1,6 +1,6 @@
 extends GlobalState
 
-var dungeon_scene = preload("res://Scenes/dungeon.tscn")
+var dungeon_scene = preload("res://Scenes/DungeonScenes/dungeon.tscn")
 var previous_scene: String = ""
 
 func enter(previous_state_path: String, _data := {}) -> void:

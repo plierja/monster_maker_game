@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://hfbbjdei7wff"]
+
+[ext_resource type="Script" uid="uid://bi01ir48uwh5q" path="res://Scripts/DungeonScripts/dungeon.gd" id="1_lncl2"]
+[ext_resource type="Texture2D" uid="uid://c6ng6d06qej1t" path="res://Art Assets/BG Art/BgArt-Cobblestone01-HollowOverlay-export.png" id="2_afx4b"]
+[ext_resource type="Script" uid="uid://bt536206x2pqo" path="res://Scripts/States/state_machine.gd" id="3_hqrri"]
+[ext_resource type="Script" uid="uid://dyrohg4c8jyn7" path="res://Scripts/States/DungeonStates/exploration_state.gd" id="4_vhgbg"]
+[ext_resource type="Script" uid="uid://bu3ndd0k6enf3" path="res://Scripts/States/DungeonStates/battle_state.gd" id="5_afx4b"]
+[ext_resource type="Script" uid="uid://k7o654kcactg" path="res://Scripts/States/DungeonStates/shop_state.gd" id="6_ndtsi"]
+[ext_resource type="Texture2D" uid="uid://bfhr6a0qba6nn" path="res://Art Assets/BG Art/BgArt-ExplorationBG-019.png" id="7_ndtsi"]
+[ext_resource type="Script" uid="uid://bmi271w3yrjy4" path="res://Scripts/DungeonScripts/exploration_bg_1.gd" id="8_ndtsi"]
+[ext_resource type="Texture2D" uid="uid://b6clgmwq0g7o8" path="res://Art Assets/BG Art/DungeonProgress-Bar01-export.png" id="9_d1vug"]
+[ext_resource type="Texture2D" uid="uid://bf0p3dhn4m76d" path="res://Art Assets/Card Art/claw_icon.png" id="10_bhr6o"]
+[ext_resource type="Script" uid="uid://bpram3we0lu3s" path="res://Scenes/DungeonScenes/progress_bar_player.gd" id="10_k717u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k717u"]
+size = Vector2(52, 52.00009)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2oma"]
+size = Vector2(1, 10)
+
+[node name="Dungeon" type="Control" unique_id=1420938611]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lncl2")
+
+[node name="DungeonCamera" type="Camera2D" parent="." unique_id=50633758]
+
+[node name="DungeonStateMachine" type="Node" parent="." unique_id=1940683415]
+script = ExtResource("3_hqrri")
+metadata/_custom_type_script = "uid://bt536206x2pqo"
+
+[node name="Exploration" type="Node" parent="DungeonStateMachine" unique_id=2142039158]
+script = ExtResource("4_vhgbg")
+
+[node name="Battle" type="Node" parent="DungeonStateMachine" unique_id=1473359796]
+script = ExtResource("5_afx4b")
+
+[node name="Shop" type="Node" parent="DungeonStateMachine" unique_id=1312886600]
+script = ExtResource("6_ndtsi")
+
+[node name="ExplorationBG1" type="Sprite2D" parent="." unique_id=769927111]
+position = Vector2(-1, 18)
+texture = ExtResource("7_ndtsi")
+script = ExtResource("8_ndtsi")
+
+[node name="ExplorationBG2" type="Sprite2D" parent="." unique_id=1188003323]
+position = Vector2(620, 18)
+texture = ExtResource("7_ndtsi")
+script = ExtResource("8_ndtsi")
+
+[node name="UiOverlay" type="TextureRect" parent="." unique_id=1940507764]
+layout_mode = 0
+offset_left = -322.0
+offset_top = -180.0
+offset_right = 318.0
+offset_bottom = 180.0
+texture = ExtResource("2_afx4b")
+
+[node name="ProgressBar" type="TextureRect" parent="." unique_id=387821537]
+layout_mode = 0
+offset_left = 36.0
+offset_top = -136.0
+offset_right = 300.0
+offset_bottom = -94.0
+texture = ExtResource("9_d1vug")
+
+[node name="ProgressBarPlayer" type="CharacterBody2D" parent="." unique_id=1372596992]
+script = ExtResource("10_k717u")
+
+[node name="ProgressBarPlayer" type="Sprite2D" parent="ProgressBarPlayer" unique_id=220860077]
+position = Vector2(38, -104)
+scale = Vector2(0.15384616, 0.15384607)
+texture = ExtResource("10_bhr6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProgressBarPlayer" unique_id=1742836778]
+position = Vector2(38, -104)
+scale = Vector2(0.15384616, 0.15384607)
+shape = SubResource("RectangleShape2D_k717u")
+
+[node name="BattleMarker1" type="Area2D" parent="." unique_id=1660347669]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleMarker1" unique_id=1417006055]
+position = Vector2(56.5, -103)
+shape = SubResource("RectangleShape2D_d2oma")
+
+[node name="ShopMarker" type="Area2D" parent="." unique_id=772839519]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopMarker" unique_id=1178676477]
+position = Vector2(154, -103)
+shape = SubResource("RectangleShape2D_d2oma")
+
+[node name="BattleMarker2" type="Area2D" parent="." unique_id=1363399988]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleMarker2" unique_id=153055144]
+position = Vector2(106, -103)
+shape = SubResource("RectangleShape2D_d2oma")
+
+[node name="BattleMarker3" type="Area2D" parent="." unique_id=252503925]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattleMarker3" unique_id=1229122680]
+position = Vector2(217, -104)
+shape = SubResource("RectangleShape2D_d2oma")
+
+[node name="BossMarker" type="Area2D" parent="." unique_id=339776744]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossMarker" unique_id=1743806842]
+position = Vector2(285, -103)
+shape = SubResource("RectangleShape2D_d2oma")
+
+[connection signal="area_shape_entered" from="BattleMarker1" to="ProgressBarPlayer" method="_on_battle_marker_1_area_shape_entered"]
+[connection signal="body_entered" from="BattleMarker1" to="ProgressBarPlayer" method="_on_battle_marker_1_body_entered"]
